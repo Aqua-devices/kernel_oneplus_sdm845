@@ -6,16 +6,7 @@ ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
         sdm845-mtp-overlay.dtbo \
         sdm845-v2-mtp-overlay.dtbo \
         sdm845-v2.1-mtp-overlay.dtbo \
-        enchilada-evb-overlay.dtbo \
-        enchilada-evb-v2-overlay.dtbo \
         enchilada-evb-v2.1-overlay.dtbo \
-        enchilada-t0-v2-overlay.dtbo \
-        enchilada-evt1-v2-overlay.dtbo \
-        enchilada-evt2-v2-overlay.dtbo \
-        enchilada-evt2-cxo-v2-overlay.dtbo \
-        enchilada-dvt-v2-overlay.dtbo \
-        enchilada-pvt-v2-overlay.dtbo \
-        enchilada-mp-v2-overlay.dtbo  \
         enchilada-t0-v2.1-overlay.dtbo \
         enchilada-evt1-v2.1-overlay.dtbo \
         enchilada-evt2-v2.1-overlay.dtbo \
@@ -25,22 +16,22 @@ ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
         enchilada-dvt-v2.1-usb30-overlay.dtbo \
         enchilada-pvt-v2.1-overlay.dtbo \
         enchilada-pvt-v2.1-backup-overlay.dtbo \
-        enchilada-mp-v2.1-overlay.dtbo 
-
+        enchilada-mp-v2.1-overlay.dtbo \
+        fajita-evb-v2.1-overlay.dtbo \
+        fajita-t0-v2.1-overlay.dtbo \
+        fajita-evt1-v2.1-overlay.dtbo \
+        fajita-dvt-v2.1-overlay.dtbo \
+        fajita-dvt-v2.1-bu-overlay.dtbo \
+        fajita-pvt-v2.1-overlay.dtbo \
+        fajita-pvt-v2.1-bu-overlay.dtbo \
+        fajita-pvt-v2.1-v1-overlay.dtbo \
+        fajita-pvt-v2.1-spec-overlay.dtbo \
+        fajita-mp-v2.1-spec-overlay.dtbo
 
 sdm845-mtp-overlay.dtbo-base := sdm845.dtb
 sdm845-v2-mtp-overlay.dtbo-base := sdm845-v2.dtb
 sdm845-v2.1-mtp-overlay.dtbo-base := sdm845-v2.1.dtb
-enchilada-evb-overlay.dtbo-base := sdm845.dtb
-enchilada-evb-v2-overlay.dtbo-base := sdm845-v2.dtb
 enchilada-evb-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
-enchilada-t0-v2-overlay.dtbo-base := sdm845-v2.dtb
-enchilada-evt1-v2-overlay.dtbo-base := sdm845-v2.dtb
-enchilada-evt2-v2-overlay.dtbo-base := sdm845-v2.dtb
-enchilada-evt2-cxo-v2-overlay.dtbo-base := sdm845-v2.dtb
-enchilada-dvt-v2-overlay.dtbo-base := sdm845-v2.dtb
-enchilada-pvt-v2-overlay.dtbo-base := sdm845-v2.dtb
-enchilada-mp-v2-overlay.dtbo-base := sdm845-v2.dtb
 enchilada-t0-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
 enchilada-evt1-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
 enchilada-evt2-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
@@ -51,6 +42,16 @@ enchilada-dvt-v2.1-usb30-overlay.dtbo-base := sdm845-v2.1.dtb
 enchilada-pvt-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
 enchilada-pvt-v2.1-backup-overlay.dtbo-base := sdm845-v2.1.dtb
 enchilada-mp-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-evb-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-t0-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-evt1-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-dvt-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-dvt-v2.1-bu-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-pvt-v2.1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-pvt-v2.1-bu-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-pvt-v2.1-v1-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-pvt-v2.1-spec-overlay.dtbo-base := sdm845-v2.1.dtb
+fajita-mp-v2.1-spec-overlay.dtbo-base := sdm845-v2.1.dtb
 
 
 else ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),n)
@@ -396,6 +397,8 @@ dtbo-$(CONFIG_ARCH_MSM8917) += msm8917-mtp-overlay.dtbo \
 	apq8017-cdp-overlay.dtbo \
 	apq8017-cdp-wcd-rome-overlay.dtbo
 
+dtbo-$(CONFIG_ARCH_QM215) +=qm215-qrd-overlay.dtbo
+
 dtbo-$(CONFIG_ARCH_MSM8953) += msm8953-mtp-overlay.dtbo \
 	msm8953-cdp-overlay.dtbo \
 	msm8953-rcm-overlay.dtbo \
@@ -440,6 +443,7 @@ msm8917-mtp-overlay.dtbo-base := msm8917-pmi8950.dtb \
 
 msm8917-qrd-overlay.dtbo-base := msm8917-pmi8937.dtb
 
+
 msm8917-cdp-ext-codec-overlay.dtbo-base := msm8917-pmi8950.dtb
 
 msm8917-cdp-ml-touch-overlay.dtbo-base := msm8917-pmi8950.dtb
@@ -460,6 +464,8 @@ apq8017-cdp-overlay.dtbo-base := apq8017-pmi8950.dtb \
 
 apq8017-cdp-wcd-rome-overlay.dtbo-base := apq8017-pmi8950.dtb \
 	apq8017-pmi8937.dtb
+
+qm215-qrd-overlay.dtbo-base := qm215.dtb
 
 msm8953-mtp-overlay.dtbo-base := sdm450.dtb \
 	msm8953.dtb \
@@ -522,6 +528,7 @@ sdm439-cdp-overlay.dtbo-base := sdm439.dtb \
 	msm8937-interposer-sdm439.dtb
 sdm439-qrd-overlay.dtbo-base := sdm439.dtb \
 	msm8937-interposer-sdm439.dtb
+
 sdm439-external-codec-mtp-overlay.dtbo-base := sdm439.dtb
 sdm439-rcm-overlay.dtbo-base := sdm439.dtb
 sdm429-mtp-overlay.dtbo-base := sdm429.dtb \
@@ -592,6 +599,8 @@ dtb-$(CONFIG_ARCH_MSM8917) += msm8917-pmi8950-mtp.dtb \
 	msm8917-pmi8940-cdp.dtb \
 	msm8917-pmi8940-rcm.dtb
 
+dtb-$(CONFIG_ARCH_QM215) += qm215-qrd.dtb
+
 dtb-$(CONFIG_ARCH_MSM8909) += sdw3100-msm8909w-wtp.dtb \
 	sdw3100-apq8009w-wtp.dtb \
 	sdw3100-apq8009w-alpha.dtb \
@@ -640,7 +649,8 @@ dtb-$(CONFIG_ARCH_SDM439) += sdm439-mtp.dtb \
 	sda439-mtp.dtb \
 	sda439-cdp.dtb \
 	sdm439-external-codec-mtp.dtb \
-	sdm439-rcm.dtb
+	sdm439-rcm.dtb \
+	qm215-qrd.dtb
 
 dtb-$(CONFIG_ARCH_SDM429) += sdm429-mtp.dtb \
 	sdm429-cdp.dtb \
